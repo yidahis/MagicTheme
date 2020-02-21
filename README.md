@@ -1,0 +1,29 @@
+# MagicTheme
+
+[![CI Status](https://img.shields.io/travis/yidahis@gmail.com/MagicTheme.svg?style=flat)](https://travis-ci.org/yidahis@gmail.com/MagicTheme)
+[![Version](https://img.shields.io/cocoapods/v/MagicTheme.svg?style=flat)](https://cocoapods.org/pods/MagicTheme)
+[![License](https://img.shields.io/cocoapods/l/MagicTheme.svg?style=flat)](https://cocoapods.org/pods/MagicTheme)
+[![Platform](https://img.shields.io/cocoapods/p/MagicTheme.svg?style=flat)](https://cocoapods.org/pods/MagicTheme)
+
+## Example
+
+To run the example project, clone the repo, and run `pod install` from the Example directory first.
+
+## Requirements
+
+## Installation
+
+MagicTheme is available through [CocoaPods](https://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+```ruby
+pod 'MagicTheme'
+```
+
+## Author
+
+yidahis@gmail.com, yiwanjun@daixiaomi.com
+
+## License
+
+MagicTheme is available under the MIT license. See the LICENSE file for more info.

@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'MagicTheme_Example' do
+  pod 'MagicTheme', :path => '../'
+
+  target 'MagicTheme_Tests' do
+    inherit! :search_paths
+
+    pod 'FBSnapshotTestCase' , '~> 2.1.4'
+  end
+end
