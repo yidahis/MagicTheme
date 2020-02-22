@@ -29,6 +29,8 @@ TODO: Add long description of the pod here.
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
+  
+#  s.pod_target_xcconfig = { 'SWIFT_OBJC_BRIDGING_HEADER' => 'MagicTheme-Bridging-Header.h' }
 
   s.source_files = 'MagicTheme/Classes/**/*'
   

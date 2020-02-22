@@ -29,7 +29,7 @@
 
 /* Begin PBXFileReference section */
 		00ED0443EED33E8268B30E39 /* Pods-MagicTheme_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagicTheme_Tests.release.xcconfig"; path = "Target Support Files/Pods-MagicTheme_Tests/Pods-MagicTheme_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		1175944EC1336436629C9493 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		1175944EC1336436629C9493 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		2334947854E4A5CA7BAC2A10 /* Pods_MagicTheme_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MagicTheme_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3154590AA9D16A34DD3CCEBC /* Pods-MagicTheme_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagicTheme_Example.debug.xcconfig"; path = "Target Support Files/Pods-MagicTheme_Example/Pods-MagicTheme_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		3292F1A3393A74B027CAF1C6 /* Pods-MagicTheme_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagicTheme_Tests.debug.xcconfig"; path = "Target Support Files/Pods-MagicTheme_Tests/Pods-MagicTheme_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -44,8 +44,8 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		6F340A6943204C01EDED7A27 /* Pods_MagicTheme_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MagicTheme_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D1A394FE7E1D75DA5A85CA6 /* MagicTheme.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = MagicTheme.podspec; path = ../MagicTheme.podspec; sourceTree = "<group>"; };
-		C629B0B12F97268A50FF8355 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		9D1A394FE7E1D75DA5A85CA6 /* MagicTheme.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MagicTheme.podspec; path = ../MagicTheme.podspec; sourceTree = "<group>"; };
+		C629B0B12F97268A50FF8355 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		D006B471724732459A5F0AA7 /* Pods-MagicTheme_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagicTheme_Example.release.xcconfig"; path = "Target Support Files/Pods-MagicTheme_Example/Pods-MagicTheme_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -156,7 +156,6 @@
 				3292F1A3393A74B027CAF1C6 /* Pods-MagicTheme_Tests.debug.xcconfig */,
 				00ED0443EED33E8268B30E39 /* Pods-MagicTheme_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -228,6 +227,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
