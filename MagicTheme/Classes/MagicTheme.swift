@@ -14,9 +14,7 @@ public enum Theme: String {
 }
 
 public struct R {
-    public init() {
-        
-    }
+    public init() {}
 }
 
 @objc open class MagicTheme: NSObject {
@@ -24,13 +22,9 @@ public struct R {
     private override init(){}
     private let hashTable = NSHashTable<AnyObject>(options: .weakMemory)
     
-    public var delegate: MagicThemeProrocolol?{
-        didSet{
-            start()
-        }
-    }
-    
     public static let shared = MagicTheme()
+    public var delegate: MagicThemeProrocolol?
+    
     public var theme = Theme.light{
         didSet{
             self.updateUI()
@@ -38,28 +32,7 @@ public struct R {
     }
     
     var lastTheme  = Theme.dark
-    
     var duration = 0.5
-    
-    var retainColor: UIColor?
-    
-    func start(){
-        if #available(iOS 13.0, *) {
-           
-                  retainColor = UIColor { (trai) -> UIColor in
-                      if trai.userInterfaceStyle == .dark {
-                          self.theme = .dark
-                      }else {
-                          self.theme = .light
-                      }
-                      return UIColor.clear
-                  }
-              } else {
-                  // Fallback on earlier versions
-              }
-        
-         UIApplication.shared.keyWindow?.backgroundColor = retainColor
-    }
     
     func allObjects() -> [AnyObject]{
         return hashTable.allObjects
@@ -78,10 +51,6 @@ public struct R {
     func remove(_ view: UIView) {
         hashTable.remove(view)
     }
-}
-
-public extension MagicTheme {
-    
 }
 
 public extension MagicTheme{

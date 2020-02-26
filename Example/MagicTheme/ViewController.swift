@@ -27,7 +27,6 @@ class ViewController: UIViewController {
         title = "Main"
         view.backgroundColor = R.Color.buttonBackground.theme
   
-        
         navigationController?.navigationBar.barTintColor = R.Color.background.theme
         storyBoardLabel.textColor = R.Color.title.theme
         nextBtn.setTitleColor(R.Color.title.theme, for: .normal)

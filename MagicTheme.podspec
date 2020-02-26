@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'MagicTheme'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of MagicTheme.'
+  s.summary          = 'Swift 实现的高效主题切换框架'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -24,7 +24,7 @@ TODO: Add long description of the pod here.
   s.homepage         = 'https://github.com/yidahis@gmail.com/MagicTheme'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'yidahis@gmail.com' => 'yiwanjun@daixiaomi.com' }
+  s.author           = { 'yidahis@gmail.com' => 'yidahis@gmail.com' }
   s.source           = { :git => 'https://github.com/yidahis@gmail.com/MagicTheme.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 

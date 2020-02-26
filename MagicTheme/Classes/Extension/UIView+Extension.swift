@@ -117,19 +117,3 @@ extension UIView: DynamicThemeProtocol {
     }
 }
 
-extension UIWindow {
-    override open func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        if #available(iOS 12.0, *) {
-            guard let trai = previousTraitCollection else {
-                return
-            }
-            if trai.userInterfaceStyle == .dark {
-                MagicTheme.shared.theme = .dark
-            }else {
-                MagicTheme.shared.theme = .light
-            }
-        } else {
-            // Fallback on earlier versions
-        }
-    }
-}
