@@ -8,8 +8,8 @@
 
 import UIKit
 
-extension UIImage {
-    private static var keys_dyName = "keys_dyName"
+public extension UIImage {
+    static var keys_dyName = "keys_dyName"
     var dyName: String? {
         get{
             objc_getAssociatedObject(self, &UIImage.keys_dyName) as? String
@@ -18,4 +18,9 @@ extension UIImage {
             objc_setAssociatedObject(self, &UIImage.keys_dyName, newValue, .OBJC_ASSOCIATION_COPY)
         }
     }
+    convenience init?(dyNamed name: String){
+        self.init(named: name)
+        dyName = name
+    }
+
 }

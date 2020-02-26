@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="CaY-AJ-VBt">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -25,20 +25,48 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mBT-RP-uEe">
+                                <rect key="frame" x="171" y="517" width="32" height="30"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="nextBtnAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="eUf-IT-LYF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="mBT-RP-uEe" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="155" id="gDb-rV-2Og"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="mfm-gq-G7j" secondAttribute="bottom" constant="228" id="jQ5-kS-xtG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mBT-RP-uEe" secondAttribute="trailing" constant="156" id="pmr-rb-V3m"/>
                             <constraint firstItem="mfm-gq-G7j" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="13" id="rOQ-LF-oZN"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="mBT-RP-uEe" secondAttribute="bottom" constant="120" id="ubi-b7-S0B"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="v0e-Ag-02Q"/>
                     <connections>
+                        <outlet property="nextBtn" destination="mBT-RP-uEe" id="eht-XZ-weD"/>
                         <outlet property="storyBoardLabel" destination="mfm-gq-G7j" id="aWW-Rd-Hqw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138" y="133"/>
+            <point key="canvasLocation" x="63" y="-80"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nFd-eI-UHu">
+            <objects>
+                <navigationController id="CaY-AJ-VBt" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hBz-6A-lR9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="HjE-IC-4bp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cnb-NO-UOc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-686" y="-81"/>
         </scene>
     </scenes>
 </document>

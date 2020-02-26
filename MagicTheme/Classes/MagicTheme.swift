@@ -8,9 +8,15 @@
 
 import UIKit
 
-enum Theme {
+public enum Theme: String {
     case dark
     case light
+}
+
+public struct R {
+    public init() {
+        
+    }
 }
 
 @objc open class MagicTheme: NSObject {
@@ -18,9 +24,46 @@ enum Theme {
     private override init(){}
     private let hashTable = NSHashTable<AnyObject>(options: .weakMemory)
     
+    public var delegate: MagicThemeProrocolol?{
+        didSet{
+            start()
+        }
+    }
+    
     public static let shared = MagicTheme()
-    var theme = Theme.light
+    public var theme = Theme.light{
+        didSet{
+            self.updateUI()
+        }
+    }
+    
+    var lastTheme  = Theme.dark
+    
     var duration = 0.5
+    
+    var retainColor: UIColor?
+    
+    func start(){
+        if #available(iOS 13.0, *) {
+           
+                  retainColor = UIColor { (trai) -> UIColor in
+                      if trai.userInterfaceStyle == .dark {
+                          self.theme = .dark
+                      }else {
+                          self.theme = .light
+                      }
+                      return UIColor.clear
+                  }
+              } else {
+                  // Fallback on earlier versions
+              }
+        
+         UIApplication.shared.keyWindow?.backgroundColor = retainColor
+    }
+    
+    func allObjects() -> [AnyObject]{
+        return hashTable.allObjects
+    }
     
     func contains(_ anObject: AnyObject?) -> Bool{
         return hashTable.contains(anObject)
@@ -37,14 +80,18 @@ enum Theme {
     }
 }
 
+public extension MagicTheme {
+    
+}
+
 public extension MagicTheme{
     func changeTheme(){
+        lastTheme = theme
         if theme == .dark {
             theme = .light
         }else{
             theme = .dark
         }
-        self.updateUI()
     }
     
     fileprivate func updateUI(){

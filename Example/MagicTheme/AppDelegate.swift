@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MagicTheme
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+//        if let r = R() as? MagicThemeProrocolol {
+            MagicTheme.shared.delegate = R()
+//        }
+        
         return true
     }
 

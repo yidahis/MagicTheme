@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import ObjectiveC
 
 public let swift_dy_prefix = "swift_dy_"
 
@@ -25,7 +26,6 @@ extension NSObject {
             if let name = string, name.hasPrefix(prefix) {
                 methods.append(aMet)
             }
-            //            print(string)
         }
         return methods
     }
@@ -57,4 +57,5 @@ extension NSObject: NSSwiftyLoadProtocol{
         method_exchangeImplementations(origin_s, new_s)
     }
 }
+
 

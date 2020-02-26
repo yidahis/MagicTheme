@@ -10,26 +10,25 @@ import UIKit
 
 extension UILabel {
     private static var keys_dy_textColor = "keys_textColor"
-    var dy_textColor: R.Color?{
+    var dy_textColorName: String?{
         set{
             objc_setAssociatedObject(self, &UILabel.keys_dy_textColor, newValue, .OBJC_ASSOCIATION_COPY)
         }
         get{
-            objc_getAssociatedObject(self, &UILabel.keys_dy_textColor) as? R.Color
+            objc_getAssociatedObject(self, &UILabel.keys_dy_textColor) as? String
         }
     }
 }
 
 extension UILabel: DynamicThemeProtocol {
-    override func isDynamic() -> Bool {
-        print("UILabel isDynamic" ,self.text,textColor.dyColorName)
+    override public func isDynamic() -> Bool {
         return textColor.dyColorName != nil
     }
-    
-    override func dyUpdateUI() -> () -> Void {
+
+    override public func dyUpdateUI() -> () -> Void {
         return {
             if let colorName = self.textColor.dyColorName {
-                self.textColor = R.Color(rawValue: colorName)?.theme
+                self.textColor = UIView.dyColor(for: colorName)
             }
         }
     }

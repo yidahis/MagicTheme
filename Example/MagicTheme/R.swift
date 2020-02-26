@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MagicTheme
 
- public struct R {
+extension R {
     private enum DarkColor: String {
         case title
         case hightLightTitle
@@ -42,7 +43,7 @@ import UIKit
             case .hightLightTitle:
                 return "F6CE46"
             case .background:
-                return "ffffff"
+                return "ffff00"
             case .buttonBackground:
                 return "E08D35"
             }
@@ -55,6 +56,10 @@ import UIKit
         case background
         case buttonBackground
         
+        init?(darkName: String?) {
+            self.init(rawValue: darkName?.replacingOccurrences(of: "_dark", with: "") ?? "")
+        }
+        
         public var theme: UIColor {
             get {
                 var colorValue = LightColor.init(rawValue: self.rawValue)!.rawValue()
@@ -65,31 +70,38 @@ import UIKit
                 color.dyColorName = self.rawValue
                 return color
             }
-        } 
+        }
     }
 }
 
 public extension R {
-     enum Image: String {
+    enum Image: String {
         case icon_baby
         case button_icon_teat
-    
-        init?(darkName: String) {
-            self.init(rawValue: darkName.replacingOccurrences(of: "_dark", with: ""))
+        
+        init?(darkName: String?) {
+            self.init(rawValue: darkName?.replacingOccurrences(of: "_dark", with: "") ?? "")
         }
         
         public var theme: UIImage? {
             get {
-                var imageName = self.rawValue
-                
-                  if MagicTheme.shared.theme == .dark {
-                      imageName.append("_dark")
-                  }
-                  
-                  let image = UIImage(named: imageName)
-                  image?.dyName = imageName
+                  let image = UIImage(named: self.rawValue)
+                image?.dyName = self.rawValue
                   return image
             }
         }
     }
 }
+
+extension R: MagicThemeProrocolol {
+    
+    public func dyImage(for name: String) -> UIImage? {
+        UIImage(named: name)
+   }
+    public func dyColor(for name: String) -> UIColor? {
+        print("color ", name)
+        
+        return R.Color(darkName: name)?.theme
+    }
+}
+

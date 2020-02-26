@@ -9,13 +9,13 @@
 import UIKit
 
 extension UINavigationBar: DynamicThemeProtocol {
-    override func isDynamic() -> Bool {
+    override public func isDynamic() -> Bool {
         barTintColor?.dyColorName != nil
     }
-    override func dyUpdateUI() -> () -> Void {
+    override public func dyUpdateUI() -> () -> Void {
         return {
             if let colorName = self.barTintColor?.dyColorName {
-                self.barTintColor = R.Color(rawValue: colorName)?.theme
+                self.barTintColor = UIColor.hex(colorName)
             }
         }
     }

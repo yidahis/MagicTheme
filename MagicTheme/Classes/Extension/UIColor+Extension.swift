@@ -8,8 +8,8 @@
 
 import UIKit
 
-@objc extension UIColor {
-    class func colorWithHex(hex: String) -> UIColor {
+@objc public extension UIColor {
+    class func hex(_ hex: String) -> UIColor {
         var cString = hex.trimmingCharacters(in:CharacterSet.whitespacesAndNewlines).uppercased()
         
         if cString.hasPrefix("#") {
@@ -37,19 +37,21 @@ import UIKit
         return UIColor(red: CGFloat(r) / 255.0, green: CGFloat(g) / 255.0, blue: CGFloat(b) / 255.0, alpha: CGFloat(1))
     }
     
-    class func dy_colorWithHex(hex: String) -> UIColor {
-        colorWithHex(hex: hex)
+    class func dy_colorWithHex(hex string: String) -> UIColor {
+        hex(string)
     }
 }
 
-extension UIColor {
-    private static var keys_dyColorName = "keys_dyColorName"
+fileprivate var colorDic = [UnsafeMutablePointer<Any>: String]()
+public extension UIColor {
+    static var keys_dyColorName = "keys_dyColorName"
     var dyColorName: String? {
         get{
-            objc_getAssociatedObject(self, &UIColor.keys_dyColorName) as? String
+            objc_getAssociatedObject(self, &(UIColor.keys_dyColorName)) as? String
+           
         }
         set{
-            objc_setAssociatedObject(self, &UIColor.keys_dyColorName, newValue, .OBJC_ASSOCIATION_COPY)
+            objc_setAssociatedObject(self, &(UIColor.keys_dyColorName), newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC)
         }
     }
 }

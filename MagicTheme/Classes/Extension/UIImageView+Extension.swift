@@ -10,31 +10,33 @@ import Foundation
 
 extension UIImageView {
     static var keys_dy_image = "keys_dy_image"
-    var dyImage: R.Image?{
+    var dyImageName: String?{
         set{
             objc_setAssociatedObject(self, &UIImageView.keys_dy_image, newValue, .OBJC_ASSOCIATION_RETAIN)
         }
         get{
-            objc_getAssociatedObject(self, &UIImageView.keys_dy_image) as? R.Image
+            objc_getAssociatedObject(self, &UIImageView.keys_dy_image) as? String
         }
     }
 }
 
+
 extension UIImageView: DynamicThemeProtocol {
-    override func isDynamic() -> Bool {
+    override public func isDynamic() -> Bool {
         if let image = image,
-            let dyName = image.dyName
+            let imageName = image.dyName
         {
-            
-            self.dyImage = R.Image(darkName: dyName)
+            self.dyImageName = imageName
             return true
         }
         return false
     }
     
-    override func dyUpdateUI() -> () -> Void {
+    override public func dyUpdateUI() -> () -> Void {
         return {
-            self.image = self.dyImage?.theme
+            print(self.dyImageName)
+            let img = UIView.dyImage(for: self.dyImageName)
+            self.image = img
         }
     }
 }

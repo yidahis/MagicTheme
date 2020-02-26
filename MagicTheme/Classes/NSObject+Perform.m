@@ -10,6 +10,11 @@
 
 @implementation NSObject (Perform)
 
+//- (id)forwardingTargetForSelector:(SEL)aSelector{
+//    NSLog(@"self",self);
+//    return nil;
+//}
+
 - (id)dy_performSelector:(SEL)aSelector withObjects:(NSArray*)objects{
     //1、创建签名对象
     //  NSMethodSignature*signature = [self methodSignatureForSelector:aSelector];

@@ -9,27 +9,29 @@
 import UIKit
 import MagicTheme
 
+
 class ViewController: UIViewController {
     
+    @IBOutlet weak var nextBtn: UIButton!
     @IBOutlet weak var storyBoardLabel: UILabel!
     
-    override class func awakeFromNib() {
-        super.awakeFromNib()
-        print("awakeFromNib", self)
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        view.backgroundColor = R.Color.background.theme
-        storyBoardLabel.textColor = R.Color.title.theme
-        print("set storyBoardLabel textColor")
-        addViews()
         
+        configUI()
     }
     
-   
     
-    func addViews(){
+    func configUI(){
+        title = "Main"
+        view.backgroundColor = R.Color.buttonBackground.theme
+  
+        
+        navigationController?.navigationBar.barTintColor = R.Color.background.theme
+        storyBoardLabel.textColor = R.Color.title.theme
+        nextBtn.setTitleColor(R.Color.title.theme, for: .normal)
+        
         for _ in 0..<1 {
             let label = UILabel()
             label.frame = CGRect(x: 100, y: 100, width: 60, height: 20)
@@ -61,10 +63,15 @@ class ViewController: UIViewController {
         print(time)
     }
     
+    @IBAction func nextBtnAction(_ sender: Any) {
+        let mainController = MainViewController()
+        navigationController?.pushViewController(mainController, animated: true)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 }
+
+//extension ViewController:
 

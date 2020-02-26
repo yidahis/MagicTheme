@@ -11,10 +11,11 @@ import Foundation
 extension UIControl{
     var dyStates: [UIControl.State] {
         get {
-            [.normal,
+            [
              .highlighted,
              .selected,
-             .disabled]
+             .disabled,
+            .normal,]
         }
     }
 }
@@ -22,8 +23,8 @@ extension UIControl{
 public struct UpdateUIUnit {
     var sel: Selector
     var state: UIControl.State.RawValue
-    var rColor: R.Color?
-    var rImage: R.Image?
+    var rColorName: String?
+    var rImageName: String?
 }
 extension UIButton {
     
@@ -40,40 +41,42 @@ extension UIButton {
 }
 
 extension UIButton: DynamicThemeProtocol {
-    override func isDynamic() -> Bool {
+    override public func isDynamic() -> Bool {
         if updateUnits == nil {
             updateUnits = [UpdateUIUnit]()
         }
         var isDynamicBtn = false
-        for dyState in dyStates {
+        dyStates.forEach { (dyState) in
             if let color = titleColor(for: dyState),
-                let dyColorName = color.dyColorName,
-                let rColor = R.Color(rawValue: dyColorName) {
-                let unit = UpdateUIUnit(sel: #selector(setTitleColor(_:for:)), state: dyState.rawValue, rColor: rColor)
+                let dyColorName = color.dyColorName {
+                let unit = UpdateUIUnit(sel: #selector(setTitleColor(_:for:)), state: dyState.rawValue, rColorName: dyColorName)
                 updateUnits?.append(unit)
                 isDynamicBtn = true
             }
             
             if let image = image(for: dyState),
-                let dyName = image.dyName,
-                let rImage = R.Image(darkName: dyName) {
-                let unit = UpdateUIUnit(sel: #selector(setImage(_:for:)), state: dyState.rawValue, rImage: rImage)
+                let dyName = image.dyName {
+                let unit = UpdateUIUnit(sel: #selector(setImage(_:for:)), state: dyState.rawValue, rImageName: dyName)
                 updateUnits?.append(unit)
                 isDynamicBtn = true
             }
         }
+        for dyState in dyStates {
+            
+        }
         return isDynamicBtn
     }
-    override func dyUpdateUI() ->() -> Void {
+    override public func dyUpdateUI() ->() -> Void {
         super.dyUpdateUI()()
         return {
+            print(self.updateUnits)
             self.updateUnits?.forEach({ (unit) in
-                if let rImage = unit.rImage, let dyImage = rImage.theme {
+                if let rImageName = unit.rImageName, let dyImage = UIView.dyImage(for: rImageName) {
                     self.dy_perform(unit.sel, with: [dyImage, unit.state])
                 }
-                
-                if let rColor = unit.rColor {
-                    self.dy_perform(unit.sel, with: [rColor.theme, unit.state])
+
+                if let rColorName = unit.rColorName, let rColor = UIView.dyColor(for: rColorName) {
+                    self.dy_perform(unit.sel, with: [rColor, unit.state])
                 }
             })
         }

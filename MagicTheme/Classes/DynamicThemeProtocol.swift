@@ -8,9 +8,14 @@
 
 import Foundation
 
-@objc protocol DynamicThemeProtocol: AnyObject {
+@objc public protocol DynamicThemeProtocol: AnyObject {
     func dyUpdateUI() -> () -> Void
     func isDynamic() -> Bool
+}
+
+public protocol MagicThemeProrocolol: Any {
+    func dyImage(for name: String) -> UIImage?
+    func dyColor(for name: String) -> UIColor?
 }
 
 

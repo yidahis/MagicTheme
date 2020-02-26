@@ -15,6 +15,11 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		EEA642842400F082006F0B8A /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEA642822400F082006F0B8A /* MainTableViewCell.xib */; };
+		EEA642852400F082006F0B8A /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA642832400F082006F0B8A /* MainTableViewCell.swift */; };
+		EED23DB124015D7400B6583F /* R.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED23DB024015D7400B6583F /* R.swift */; };
+		EED23DD72405502800B6583F /* Mems.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED23DD62405502800B6583F /* Mems.swift */; };
+		EED23DD92405531000B6583F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED23DD82405531000B6583F /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +52,11 @@
 		9D1A394FE7E1D75DA5A85CA6 /* MagicTheme.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MagicTheme.podspec; path = ../MagicTheme.podspec; sourceTree = "<group>"; };
 		C629B0B12F97268A50FF8355 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		D006B471724732459A5F0AA7 /* Pods-MagicTheme_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagicTheme_Example.release.xcconfig"; path = "Target Support Files/Pods-MagicTheme_Example/Pods-MagicTheme_Example.release.xcconfig"; sourceTree = "<group>"; };
+		EEA642822400F082006F0B8A /* MainTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
+		EEA642832400F082006F0B8A /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		EED23DB024015D7400B6583F /* R.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
+		EED23DD62405502800B6583F /* Mems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mems.swift; sourceTree = "<group>"; };
+		EED23DD82405531000B6583F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +105,11 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				EED23DD82405531000B6583F /* MainViewController.swift */,
+				EEA642832400F082006F0B8A /* MainTableViewCell.swift */,
+				EED23DD62405502800B6583F /* Mems.swift */,
+				EED23DB024015D7400B6583F /* R.swift */,
+				EEA642822400F082006F0B8A /* MainTableViewCell.xib */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -249,6 +264,7 @@
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
+				EEA642842400F082006F0B8A /* MainTableViewCell.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,8 +366,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EED23DB124015D7400B6583F /* R.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				EEA642852400F082006F0B8A /* MainTableViewCell.swift in Sources */,
+				EED23DD92405531000B6583F /* MainViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				EED23DD72405502800B6583F /* Mems.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
