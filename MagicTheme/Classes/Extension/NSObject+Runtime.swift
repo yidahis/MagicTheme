@@ -16,14 +16,13 @@ extension NSObject {
         var methods = [Method]()
         var count: UInt32 = 0
         
-        guard let propertys = class_copyMethodList(self.classForCoder(), &count) else {
+        guard let propertys = class_copyMethodList(Self.self, &count) else {
             return methods
         }
         
-        for i  in 0...(Int(count) - 1) {
+        for i  in 0..<Int(count) {
             let aMet: Method = propertys[i]
-            let string = String(utf8String: property_getName(aMet))
-            if let name = string, name.hasPrefix(prefix) {
+            if method_getName(aMet).description.hasPrefix(prefix) {
                 methods.append(aMet)
             }
         }

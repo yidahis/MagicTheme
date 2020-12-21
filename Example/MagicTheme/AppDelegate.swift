@@ -21,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             MagicTheme.shared.delegate = R()
 //        }
         
+//        debugPrint(self.allMethodNames())
+        
         return true
     }
 

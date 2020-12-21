@@ -16,7 +16,7 @@ extension R {
         case background
         case buttonBackground
         
-        func rawValue() -> String {
+        func rawValue1() -> String {
             switch self {
             case .title:
                 return "ffffff"
@@ -36,7 +36,7 @@ extension R {
         case background
         case buttonBackground
         
-        func rawValue() -> String {
+        func rawValue1() -> String {
             switch self {
             case .title:
                 return "272634"
@@ -62,9 +62,9 @@ extension R {
         
         public var theme: UIColor {
             get {
-                var colorValue = LightColor.init(rawValue: self.rawValue)!.rawValue()
+                var colorValue = LightColor.init(rawValue: self.rawValue)!.rawValue1()
                 if MagicTheme.shared.theme == .dark {
-                     colorValue = DarkColor.init(rawValue: self.rawValue)!.rawValue()
+                     colorValue = DarkColor.init(rawValue: self.rawValue)!.rawValue1()
                 }
                 let color = UIColor.dy_colorWithHex(hex: colorValue)
                 color.dyColorName = self.rawValue
