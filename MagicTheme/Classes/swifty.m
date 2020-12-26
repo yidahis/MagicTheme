@@ -1,14 +1,13 @@
 //
-//  swifty.m
-//  Swifty-Demo
+//  swify.m
+//  appearance
 //
-//  Created by bennett.peng on 2018/10/17.
-//  Copyright © 2018 bennett.peng. All rights reserved.
+//  Created by yidahis on 2020/2/21.
+//  Copyright © 2020 fame.inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import "SwiftyLoad.h"
-//#import "MagicTheme-Swift.h"
 
 SWIFTY_LOAD_INITIALIZE(UIView)
 SWIFTY_LOAD_INITIALIZE(UILabel)
