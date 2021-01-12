@@ -9,24 +9,90 @@
 import UIKit
 import MagicTheme
 
+//protocol Personable {
+//
+//}
+
+//typealias Person = Personable
+
+//class Student: Person {
+//
+//}
+
+protocol Runnable {
+    associatedtype Speed
+    var speed: Speed{get}
+}
+class Person : Runnable {
+    var speed: Double{
+        0.0
+    }
+}
+class Car : Runnable {
+    var speed: Int{
+        0
+    }
+}
+func get<T: Runnable>(_ type: Int) -> T {
+    if type == 0 {
+        return Person() as! T
+    }
+    return Car() as! T
+}
+
+@available(iOS 13.0.0, *)
+func get1(_ type: Int) -> some Runnable {
+//    if type == 0 {
+//        return Person()
+//    }
+    return Car()
+}
+
+var r1: Car = get(0)
+var r2: Person = get(1)
+
+
+
 
 class ViewController: UIViewController {
+//    var p: Runnable
     
     @IBOutlet weak var nextBtn: UIButton!
     @IBOutlet weak var storyBoardLabel: UILabel!
+//    var age: Int
+//    init() {
+//        age = 0
+//        p = Person()
+//        super.init(nibName: nil, bundle: nil)
+//        self.age = 0
+//    }
+//
+//    required init?(coder: NSCoder) {
+//        super.init(coder: coder)
+//        print(123)
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         configUI()
+        
+        for var i in stride(from: 0, to: 10, by: 2){
+            print("---------")
+            
+            i += 2
+            print(i)
+        }
+        
+        
     }
     
     
     func configUI(){
         title = "Main"
         view.backgroundColor = R.Color.buttonBackground.theme
-  
+        
         navigationController?.navigationBar.barTintColor = R.Color.background.theme
         storyBoardLabel.textColor = R.Color.title.theme
         nextBtn.setTitleColor(R.Color.title.theme, for: .normal)

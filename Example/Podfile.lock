@@ -1,27 +1,16 @@
 PODS:
-  - FBSnapshotTestCase (2.1.4):
-    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
-  - FBSnapshotTestCase/Core (2.1.4)
-  - FBSnapshotTestCase/SwiftSupport (2.1.4):
-    - FBSnapshotTestCase/Core
   - MagicTheme (0.1.0)
 
 DEPENDENCIES:
-  - FBSnapshotTestCase (~> 2.1.4)
   - MagicTheme (from `../`)
-
-SPEC REPOS:
-  trunk:
-    - FBSnapshotTestCase
 
 EXTERNAL SOURCES:
   MagicTheme:
     :path: "../"
 
 SPEC CHECKSUMS:
-  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
   MagicTheme: 1e01810acd22ae764c9ffc0f75539e2f9317816c
 
-PODFILE CHECKSUM: cc2043753b9a91b6d284aec970df744130962651
+PODFILE CHECKSUM: a21b1177482bbd47d2936e51a31c67afeadbde79
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.9.1
